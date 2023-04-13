@@ -26,7 +26,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton(onPressed: () {
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.move_up),
+          onPressed: () {
           scrollController.animateTo(
             0,
             duration: const Duration(microseconds: 500),
