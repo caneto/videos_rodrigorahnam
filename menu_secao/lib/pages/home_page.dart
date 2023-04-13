@@ -35,28 +35,34 @@ class _HomePageState extends State<HomePage> {
             curve: Curves.easeInOut,
           );
         }),
-        body: SingleChildScrollView(
-          controller: scrollController,
-          child: Column(
-            children: [
-              Menu(onMenuClick: _onMenuClink),
-              Section(
-                key: keySecao1,
-                color: Colors.green,
-                height: 1000,
+        body: Column(
+          children: [
+            Menu(onMenuClick: _onMenuClink),
+            Expanded(
+              child: SingleChildScrollView(
+                controller: scrollController,
+                child: Column(
+                  children: [
+                    Section(
+                      key: keySecao1,
+                      color: Colors.green,
+                      height: 1000,
+                    ),
+                    Section(
+                      key: keySecao2,
+                      color: Colors.red,
+                      height: 500,
+                    ),
+                    Section(
+                      key: keySecao3,
+                      color: Colors.yellow,
+                      height: 2000,
+                    ),
+                  ],
+                ),
               ),
-              Section(
-                key: keySecao2,
-                color: Colors.red,
-                height: 500,
-              ),
-              Section(
-                key: keySecao3,
-                color: Colors.yellow,
-                height: 2000,
-              ),
-            ],
-          ),
+            ),
+          ],
         ));
   }
 
@@ -80,7 +86,7 @@ class _HomePageState extends State<HomePage> {
     final offset = renderBox.localToGlobal(Offset.zero);
 
     scrollController.animateTo(
-      offset.dy,
+      offset.dy + scrollController.offset,
       duration: const Duration(microseconds: 500),
       curve: Curves.easeInOut,
     );
