@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menu_secao/pages/Teste.dart';
 
 import 'pages/home_page.dart';
 
@@ -15,10 +16,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
-      home: const HomePage(),
+      //home: const HomePage(),
+      home: const Teste(),
     );
   }
 }
+
 
